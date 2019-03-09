@@ -1,4 +1,4 @@
-from bloom_filter import BloomFilter as bloom
+from bloom_filter import BloomFilter
 import csv
 
 
@@ -6,10 +6,10 @@ class EventValidator:
 
     last = -1
     current = -1
+    bloom = BloomFilter(4980000, 0.01)
 
     def __init__(self):
-        self.last = -1
-        self.current = -1
+        self
 
     def checkOrder(self, value):
 
@@ -18,9 +18,18 @@ class EventValidator:
         else:
             self.current = value
             if self.last > self.current:
-                print("Error @ EventID = %d" % self.current)
+                print("Value @ %d is not in ASCENDING ORDER = %d" % self.current)
             else:
                 self.last = self.current
+ 
+    def checkUnique(self, value):
+
+        inside = value in self.bloom
+
+        if inside:
+            print("Value @ %s is not UNIQUE" % (value))
+        else:
+            self.bloom.add(value)
 
 
 def main():
@@ -31,8 +40,8 @@ def main():
         reader = csv.reader(csv_file, delimiter=",")
         for col in reader:
             try:
-                value = int(col[0])
-                event.checkOrder(value)
+                event.checkUnique(col[0])
+                event.checkOrder(int(col[0]))
             except:
                 pass
 

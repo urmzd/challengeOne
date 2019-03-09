@@ -1,2 +1,2 @@
-] != "EventID":
-                event.chec
+
+    event = EventValidator()
