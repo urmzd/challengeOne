@@ -8,4 +8,3 @@ class Validator:
 
         self.foo = foo
         self.foo2 = foo2
-example
