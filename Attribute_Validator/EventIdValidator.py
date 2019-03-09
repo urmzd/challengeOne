@@ -1,4 +1,5 @@
 from bloom_filter import BloomFilter as bloom
+import csv
 
 
 class EventValidator:
@@ -21,12 +22,19 @@ class EventValidator:
             else:
                 self.last = self.current
 
+
 def main():
 
     event = EventValidator()
 
-    event.checkOrder(1)
-    event.checkOrder(0)
-    event.checkOrder(2)
-    event.checkOrder(0)
-    print("hello")
+    with open("catalog_incorrect.csv", encoding="UTF8") as csv_file:
+        reader = csv.reader(csv_file, delimiter=",")
+        for col in reader:
+            try:
+                value = int(col[0])
+                event.checkOrder(value)
+            except:
+                pass
+
+if __name__ == "__main__":
+    main()
