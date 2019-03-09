@@ -39,7 +39,7 @@ def main():
 
     event = EventValidator()
 
-    with open("test.csv", encoding="UTF8") as csv_file:
+    with open("catalog_incorrect.csv", encoding="UTF8") as csv_file:
         reader = csv.reader(csv_file, delimiter=",")
         for header in reader:
             try:
