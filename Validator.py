@@ -3,6 +3,7 @@
 
 from bloom_filter import BloomFilter as bloom
 
+
 class Validator:
 
     def __init__(self, foo, foo2):
