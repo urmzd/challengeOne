@@ -1,6 +1,7 @@
 # Shiftkey Labs
 # Challenge One: CSV Validator
 
+from bloom_filter import BloomFilter as bloom
 
 class Validator:
 
