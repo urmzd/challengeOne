@@ -4,7 +4,7 @@
 import csv
 
 
-class Validator:
+class RowValidator:
 
     def __init__(self):
 
@@ -16,4 +16,4 @@ class Validator:
 
 if __name__ == "__main__":
 
-    validator = Validator()
+    validator = RowValidator()
