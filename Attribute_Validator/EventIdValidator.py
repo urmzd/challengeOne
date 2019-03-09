@@ -8,6 +8,9 @@ class EventValidator:
     current = -1
     bloom = BloomFilter(4980000, 0.01)
 
+    orderErrors = []
+    uniqueErrors = []
+
     def __init__(self):
         self
 
@@ -18,16 +21,16 @@ class EventValidator:
         else:
             self.current = value
             if self.last > self.current:
-                print("Value @ %d is not in ASCENDING ORDER = %d" % self.current)
+                self.orderErrors.append(self.current)
             else:
                 self.last = self.current
- 
+
     def checkUnique(self, value):
 
         inside = value in self.bloom
 
         if inside:
-            print("Value @ %s is not UNIQUE" % (value))
+            self.uniqueErrors.append(value)
         else:
             self.bloom.add(value)
 
@@ -44,6 +47,16 @@ def main():
                 event.checkOrder(int(col[0]))
             except:
                 pass
+
+    print("ERROR! Values not in order: ")
+    for elem in event.orderErrors:
+        print(elem)
+
+    print()  # Print new line.
+
+    print("ERROR! Values not unique: ")
+    for elem in event.uniqueErrors:
+        print(elem)     
 
 if __name__ == "__main__":
     main()
