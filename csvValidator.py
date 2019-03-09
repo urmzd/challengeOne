@@ -1,4 +1,2 @@
-Hello = "Hello"
-print(Hello)
-
-f = open("/file/catolog_correct.csv", "r")
+# Shiftkey Labs
+# Challenge One: CSV Validator
