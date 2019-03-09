@@ -4,6 +4,6 @@
 
 class Validator:
 
-    def __init__(self,foo):
-           
+    def __init__(self, foo):
+
         self.foo = foo
