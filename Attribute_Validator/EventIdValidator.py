@@ -39,14 +39,17 @@ def main():
 
     event = EventValidator()
 
-    with open("catalog_incorrect.csv", encoding="UTF8") as csv_file:
+    with open("test.csv", encoding="UTF8") as csv_file:
         reader = csv.reader(csv_file, delimiter=",")
         for header in reader:
             try:
                 event.checkUnique(header[0])
                 event.checkOrder(int(header[0]))
             except:
-                print("ERROR! Value is not number: %s" % header[0])
+                if header[0] == "" or header[0] == "EventID":
+                    pass
+                else:
+                    print("ERROR! Value is not number: %s" % header[0])
 
     print()  # Print new line.
 
