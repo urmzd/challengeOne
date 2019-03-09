@@ -18,6 +18,3 @@ class Validator:
 if __name__ == "__main__":
 
     validator = Validator()
-    print("test")
-
-    validator.checkHeader()
