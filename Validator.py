@@ -11,3 +11,6 @@ class Validator:
 
         self.foo = foo
         self.foo2 = foo2
+
+    def checkHeader(self, header):
+        self.header = header
