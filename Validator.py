@@ -7,10 +7,17 @@ from bloom_filter import BloomFilter as bloom
 
 class Validator:
 
-    def __init__(self, foo, foo2):
+    def __init__(self):
 
-        self.foo = foo
-        self.foo2 = foo2
+        self
 
-    def checkHeader(self, header):
-        self.header = header
+    def checkHeader(self):
+        self
+
+
+if __name__ == "__main__":
+
+    validator = Validator()
+    print("test")
+
+    validator.checkHeader()

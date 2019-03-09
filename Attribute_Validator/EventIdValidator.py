@@ -41,10 +41,10 @@ def main():
 
     with open("catalog_incorrect.csv", encoding="UTF8") as csv_file:
         reader = csv.reader(csv_file, delimiter=",")
-        for col in reader:
+        for header in reader:
             try:
-                event.checkUnique(col[0])
-                event.checkOrder(int(col[0]))
+                event.checkUnique(header[0])
+                event.checkOrder(int(header[0]))
             except:
                 pass
 
