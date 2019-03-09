@@ -56,7 +56,8 @@ def main():
 
     print("ERROR! Values not unique: ")
     for elem in event.uniqueErrors:
-        print(elem)     
+        print(elem)
+
 
 if __name__ == "__main__":
     main()
