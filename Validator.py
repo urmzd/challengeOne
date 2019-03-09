@@ -2,7 +2,6 @@
 # Challenge One: CSV Validator
 
 import csv
-from bloom_filter import BloomFilter as bloom
 
 
 class Validator:
@@ -11,6 +10,7 @@ class Validator:
 
         self
 
+<<<<<<< Updated upstream
     def checkHeader(self):
         self
 
@@ -18,3 +18,7 @@ class Validator:
 if __name__ == "__main__":
 
     validator = Validator()
+=======
+    def checkHeader(self, header):
+        self.header = header
+>>>>>>> Stashed changes

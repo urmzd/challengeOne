@@ -46,17 +46,17 @@ def main():
                 event.checkUnique(header[0])
                 event.checkOrder(int(header[0]))
             except:
-                pass
+                print("ERROR! Value is not number: %s" % header[0])
+
+    print()  # Print new line.
 
     print("ERROR! Values not in order: ")
-    for elem in event.orderErrors:
-        print(elem)
+    print(event.orderErrors)
 
     print()  # Print new line.
 
     print("ERROR! Values not unique: ")
-    for elem in event.uniqueErrors:
-        print(elem)
+    print(event.uniqueErrors)
 
 
 if __name__ == "__main__":
