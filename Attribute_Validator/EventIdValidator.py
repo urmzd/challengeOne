@@ -1,23 +1,32 @@
 from bloom_filter import BloomFilter as bloom
-import csv
 
 
 class EventValidator:
 
-    bloom = bloomFilter
-    last = -1;
-    current = -1;
+    last = -1
+    current = -1
 
-    def __init__(self, values):
-        self.values = values
+    def __init__(self):
+        self.last = -1
+        self.current = -1
 
     def checkOrder(self, value):
-        
-        if (last == current and last == -1) :
-            last = value
+
+        if self.last == -1:
+            self.last = value
         else:
-            current = value;
-            if (last > current) :
-                print("Error")
-            else :
-                last = current
+            self.current = value
+            if self.last > self.current:
+                print("Error @ EventID = %d" % self.current)
+            else:
+                self.last = self.current
+
+def main():
+
+    event = EventValidator()
+
+    event.checkOrder(1)
+    event.checkOrder(0)
+    event.checkOrder(2)
+    event.checkOrder(0)
+    print("hello")
