@@ -1,2 +1,2 @@
-# csv Validator
-csv validator for AnalyzeRe Hackathon.
+# csv validator
+csv validator for AnalyzeRe Hackathon
